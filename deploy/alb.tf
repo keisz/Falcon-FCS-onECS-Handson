@@ -30,8 +30,8 @@ resource "aws_lb_target_group" "target_group" {
   }
 
   tags = {
-    Name        = "${var.app_name}-lb-tg"
-    env = var.app_environment
+    Name = "${var.app_name}-lb-tg"
+    env  = var.app_environment
   }
 }
 
@@ -79,8 +79,8 @@ resource "aws_lb_target_group" "target_group_auto_detection" {
   }
 
   tags = {
-    Name        = "${var.app_name_auto_detection}-lb-tg"
-    env = var.app_environment
+    Name = "${var.app_name_auto_detection}-lb-tg"
+    env  = var.app_environment
   }
 }
 

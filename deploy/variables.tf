@@ -1,12 +1,6 @@
 variable "aws_region" {
   type = string
 }
-variable "aws_access_key" {
-  type = string
-}
-variable "aws_secret_key" {
-  type = string
-}
 
 variable "app_name" {
   type        = string
@@ -43,5 +37,11 @@ variable "image_url" {
 
 variable "image_url_auto_detection" {
   type        = string
-  description = "cs-detection container image url"
+  description = "crowdstrike detection container image url"
 }
+
+variable "falcon-sensor_ecr_name" {
+  type        = string
+  description = "Elastic Container Registry for Falcon-Sensor"
+}
+

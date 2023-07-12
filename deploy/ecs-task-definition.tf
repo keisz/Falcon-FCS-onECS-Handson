@@ -40,13 +40,13 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
 }
 
 resource "aws_ecs_service" "aws-ecs-service" {
-  name                 = "${var.app_name}-svc"
-  cluster              = aws_ecs_cluster.aws-ecs-cluster.id
-  task_definition      = aws_ecs_task_definition.aws-ecs-task.arn
-  launch_type          = "FARGATE"
-  scheduling_strategy  = "REPLICA"
-  desired_count        = 1
-  force_new_deployment = true
+  name                   = "${var.app_name}-svc"
+  cluster                = aws_ecs_cluster.aws-ecs-cluster.id
+  task_definition        = aws_ecs_task_definition.aws-ecs-task.arn
+  launch_type            = "FARGATE"
+  scheduling_strategy    = "REPLICA"
+  desired_count          = 1
+  force_new_deployment   = true
   enable_execute_command = true
 
   network_configuration {
@@ -110,13 +110,13 @@ resource "aws_ecs_task_definition" "aws-ecs-task_auto_detection" {
 }
 
 resource "aws_ecs_service" "aws-ecs-service_auto_detection" {
-  name                 = "${var.app_name_auto_detection}-svc"
-  cluster              = aws_ecs_cluster.aws-ecs-cluster.id
-  task_definition      = aws_ecs_task_definition.aws-ecs-task_auto_detection.arn
-  launch_type          = "FARGATE"
-  scheduling_strategy  = "REPLICA"
-  desired_count        = 1
-  force_new_deployment = true
+  name                   = "${var.app_name_auto_detection}-svc"
+  cluster                = aws_ecs_cluster.aws-ecs-cluster.id
+  task_definition        = aws_ecs_task_definition.aws-ecs-task_auto_detection.arn
+  launch_type            = "FARGATE"
+  scheduling_strategy    = "REPLICA"
+  desired_count          = 1
+  force_new_deployment   = true
   enable_execute_command = true
 
   network_configuration {

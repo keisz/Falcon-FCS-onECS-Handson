@@ -28,7 +28,7 @@ resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
 
 #--
 resource "aws_iam_role" "ecsTaskRole" {
-  assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
+  assume_role_policy   = data.aws_iam_policy_document.assume_role_policy.json
   max_session_duration = "3600"
   name                 = "${var.app_environment}-role"
   path                 = "/"
@@ -49,7 +49,7 @@ data "aws_iam_policy_document" "ecs_task_role_ssmmessages" {
 }
 
 resource "aws_iam_policy" "ecs-exec" {
-  name        = "EcsExec"
+  name   = "EcsExec"
   policy = data.aws_iam_policy_document.ecs_task_role_ssmmessages.json
 }
 
