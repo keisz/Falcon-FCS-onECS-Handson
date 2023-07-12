@@ -1,0 +1,21 @@
+# aws access/secret key
+aws_access_key = ""
+aws_secret_key = ""
+
+# aws region
+aws_region     = "ap-northeast-3"
+
+# these are used for tags
+app_name        = "web-dvwa"
+app_name_auto_detection = "detection-container"
+app_environment = "ecs-demo"
+
+# these are zones and subnets examples
+availability_zones = ["ap-northeast-3a"]
+public_subnets     = ["10.0.100.0/24"]
+
+# Container Image URLs
+image_url = "vulnerables/web-dvwa:latest"
+## https://hub.docker.com/r/vulnerables/web-dvwa/tags
+image_url_auto_detection = "quay.io/crowdstrike/detection-container:latest"
+## https://quay.io/repository/crowdstrike/detection-container
