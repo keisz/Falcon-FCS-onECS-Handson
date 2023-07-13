@@ -15,3 +15,6 @@ image_url = "vulnerables/web-dvwa:latest"
 ## https://hub.docker.com/r/vulnerables/web-dvwa/tags
 image_url_auto_detection = "quay.io/crowdstrike/detection-container:latest"
 ## https://quay.io/repository/crowdstrike/detection-container
+
+# Elastic Container Registry for Falcon-Sensor
+falcon-sensor_ecr_name = "falcon-sensor"
