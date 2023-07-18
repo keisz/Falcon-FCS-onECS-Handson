@@ -354,6 +354,19 @@ ECSタスク定義にFalcon Sensorの設定を挿入します。
 
 
 16. 同様の手順で、もう一つのタスク定義 **detection-container-task** にも設定を挿入します。  
+    
+    > 6.~8. で作成するファイル名を *detection-container-task-taskdefinition.json*   
+    > 11. で出力するファイルを *detection-container-task-taskdefinition-falcon.json*  
+    > と置き換えて実施します。  
+    > 11. のコマンドラインは下記のように置き換えます。   
+    
+    ```
+    docker run -v $PWD:/var/run/spec --rm $ECR_FALCON_SENSOR_URI:$FALCON_IMAGE_URI_TAG \
+    -cid $INSTALL_CID \
+    -image $ECR_FALCON_SENSOR_URI:$FALCON_IMAGE_URI_TAG \
+    -ecs-spec-file /var/run/spec/detection-container-task-taskdefinition.json \
+    -pulltoken "$IMAGE_PULL_TOKEN" > detection-container-task-taskdefinition-falcon.json
+    ```
 
 
 ### e. ECSサービスを更新し、Falcon Sensorによる保護を実行  
@@ -380,7 +393,7 @@ Falcon Sensorの設定を挿入したタスク定義を使って、ECSサービ�
 Command Injectionを実行し、Falcon上で検知されるか確認します。  
 
 #### web-dvwa-svc の検知  
-1. Terraformを実行した際のOutputのうち、**alb_dns_name_auto_detection**のURLにアクセスします。  
+1. Terraformを実行した際のOutputのうち、**alb_dns_name**のURLにアクセスします。  
 
    ```  
    Apply complete! Resources: 26 added, 0 changed, 0 destroyed.
